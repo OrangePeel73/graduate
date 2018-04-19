@@ -1,16 +1,11 @@
-FROM alpine:3.3
-
-MAINTAINER gezuxia <gezuxia@163.com>
-
-RUN apk add --update nginx && \
-    ln -sf /dev/stdout /var/log/nginx/access.log &&\
-    ln -sf /dev/stderr /var/log/nginx/error.log &&\
-    rm -rf /var/cache/apk/* && \
-    chown -R nginx:www-data /var/lib/nginx
-
+FROM node:6.10.3-slim
+RUN apt-get update \
+    && apt-get install -y nginx
+WORKDIR /app
+COPY . /app/
 EXPOSE 80
-
-# CMD nginx -g 'daemon off;'
-CMD ["nginx","-g", "daemon off;"]
-
-COPY /dist /usr/share/nginx/html/
+RUN  npm install \
+     && npm run build \
+     && cp -r dist/* /var/www/html \
+     && rm -rf /app
+CMD ["nginx","-g","daemon off;"]
