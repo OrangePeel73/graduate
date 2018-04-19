@@ -55,7 +55,7 @@
     
     <!--右侧  -->
     <el-container>
-      <el-header>Header</el-header>
+      <el-header></el-header>
       <!-- 右侧main -->
       <el-main>
         <el-col><!--放置路由 显示-->

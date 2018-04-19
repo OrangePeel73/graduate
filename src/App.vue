@@ -37,7 +37,8 @@ export default {
   .el-table__header-wrapper{
     th{
       text-align: center;
-      background-color:#F1F3F6;
+      // background-color:#F1F3F6;
+      background-color: #8F7ECE;
       height: 40px;
       line-height: 40px; 
       font-size: 16px;
