@@ -35,17 +35,24 @@ export default new Router({
     {
       path: '/',
       name: 'login',
+      redirect: '', // 1.1 默认跳转的页面为/路由
       component: Login
     },
     {
       path: '/home',
       name: 'home',
       component: Home,
+      meta: {
+        requireAuth: true // 1.2 表示进入该路由需要登录
+      },
       children: [
         {
           path: '/apply',
           name: 'apply',
           component: Apply,
+          meta: {
+            requireAuth: true // 1.2 表示进入该路由需要登录
+          },
           children: [
             {
               path: 'running',
@@ -61,71 +68,68 @@ export default new Router({
               path: 'createAppImage',
               name: 'createAppImage',
               component: CreateAppImage
-              // children: [
-              //   {
-              //     path: '',
-              //     name: 'createAppImageStep1',
-              //     component: CreateAppImageStep1
-              //   }
-              // ]
             },
             {
               path: 'createAppTemplate',
               name: 'cretaeAppTemplate',
               component: CreateAppTemplate
-              // children: [
-              //   {
-              //     path: '',
-              //     name: 'createAppTempStep1',
-              //     component: CreateAppTempStep1
-              //   },
-              //   {
-              //     path: 'createAppTempStep2',
-              //     name: 'createAppTempStep2',
-              //     component: CreateAppTempStep2
-              //   },
-              //   {
-              //     path: 'createAppTempStep3',
-              //     name: 'createAppTempStep3',
-              //     component: CreateAppTempStep3
-              //   }
-              // ]
             }
           ]
         },
         {
           path: '/repo',
           name: 'repo',
-          component: Repo
+          component: Repo,
+          meta: {
+            requireAuth: true // 1.2 表示进入该路由需要登录
+          }
         },
         {
           path: '/apply_templet',
           name: 'apply_templet',
+          meta: {
+            requireAuth: true // 1.2 表示进入该路由需要登录
+          },
           component: ApplyTemplet
         },
         {
           path: '/apply_templet/:name',
           name: 'apply_templet.detail',
+          meta: {
+            requireAuth: true // 1.2 表示进入该路由需要登录
+          },
           component: TempletDetail
         },
         {
           path: '/pod',
           name: 'pod',
+          meta: {
+            requireAuth: true // 1.2 表示进入该路由需要登录
+          },
           component: Pod
         },
         {
           path: '/master',
           name: 'master',
+          meta: {
+            requireAuth: true // 1.2 表示进入该路由需要登录
+          },
           component: Master
         },
         {
           path: '/internet',
           name: 'internet',
+          meta: {
+            requireAuth: true // 1.2 表示进入该路由需要登录
+          },
           component: Internet
         },
         {
           path: '/user_center',
           name: 'user_center',
+          meta: {
+            requireAuth: true // 1.2 表示进入该路由需要登录
+          },
           component: UserCenter
         }
       ]

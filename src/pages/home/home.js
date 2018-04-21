@@ -1,4 +1,5 @@
 import $ from 'jquery'
+import { mapGetters } from 'vuex'
 
 export default {
   name: 'app',
@@ -7,7 +8,18 @@ export default {
       title: 'home'
     }
   },
-  mounted: window.onresize = function () {
-    $('.el-container').height($(window).height())
+  created: function () {
+
+  },
+  computed: {
+    ...mapGetters(['userName'])
+    // window.onresize = function () {
+    //   $('.el-container').height($(window).height())
+  },
+  methods: {
+    LoginOut () {
+      localStorage.removeItem('name')
+      this.$router.push({path: '/'})
+    }
   }
 }

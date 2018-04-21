@@ -1,42 +1,63 @@
 import $ from 'jquery'
+import { mapGetters, mapActions } from 'vuex'
+// import { error } from 'util'
 
 export default {
   data () {
-    var checkName = (rule, value, callback) => {
-      if (!value) {
-        return callback(new Error('用户名不能为空'))
-      }
-    }
-    var validatePass = (rule, value, callback) => {
-      if (value === '') {
-        callback(new Error('请输入密码'))
-      } else {
-        if (this.ruleForm2.checkPass !== '') {
-          this.$refs.ruleForm2.validateField('checkPass')
-        }
-        callback()
-      }
-    }
     return {
       ruleForm2: {
         name: '',
-        pass: ''
+        pwd: ''
       },
       rules2: {
         name: [
-          { validator: checkName, trigger: 'blur' }
+          { required: true, message: '请输入用户名', trigger: 'blur' },
+          { pattern: /^[a-zA-Z]\w{1,15}$/,
+            message: '以字母开头,只能包含字符、数字和下划线',
+            trigger: 'blur' }
         ],
-        pass: [
-          { validator: validatePass, trigger: 'blur' }
+        pwd: [
+          { required: true, message: '请输入密码', trigger: 'blur' },
+          { pattern: /^[a-zA-Z]\w{1,15}$/,
+            message: '以字母开头,只能包含字符、数字和下划线',
+            trigger: 'blur' }
         ]
       }
     }
   },
+  computed: {
+    ...mapGetters(['userName'])
+  },
   methods: {
+    ...mapActions(['loginAdmin']),
     submitForm (formName) {
-      this.$refs[formName].validate((valid) => {
+      console.log(formName)
+      this.$refs.ruleForm2.validate((valid) => {
         if (valid) {
-          alert('submit!')
+          this.loginAdmin(formName).then((res) => {
+            console.log(res.data)
+            if (res.data) {  // 如果返回true
+              console.log(1)
+              this.$message({
+                showClose: true,
+                type: 'success',
+                message: `登录成功`
+              })
+              localStorage.setItem('name', 'admin')
+              this.$router.push({path: '/home'})
+              // let redirect = decodeURIComponent(this.$route.query.home || '/')
+              // console.log(this.$route)
+              // console.log(redirect)
+            } else {
+              this.$message({
+                showClose: true,
+                type: 'error',
+                message: `登录失败,请重新登录！`
+              })
+            }
+          }).catch((error) => {
+            console.log(error)
+          })
         } else {
           console.log('error submit!!')
           return false
@@ -44,7 +65,7 @@ export default {
       })
     },
     resetForm (formName) {
-      this.$refs[formName].resetFields()
+      this.$refs.ruleForm2.resetFields()
     }
   },
   mounted: window.onresize = function () {

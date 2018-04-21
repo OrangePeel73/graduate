@@ -60,6 +60,14 @@ body{
     }
   }
   .el-container{
+    .el-header{
+      .amdin{
+        width: 100px;
+        height: 100%;
+        background-color: darkkhaki;
+        float: right;
+      }
+    }
     .el-main {
       width: 100%;   
       padding: 10px 10px 0 10px; 

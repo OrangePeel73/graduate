@@ -19,6 +19,10 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center; */
   color: #2c3e50;
+  height: 100vh;
+  .el-container{
+    height: 100vh; // 设置全屏 elementUI一个小bug
+  }
 }
 *{
   margin: 0 auto;

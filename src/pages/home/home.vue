@@ -55,7 +55,18 @@
     
     <!--右侧  -->
     <el-container>
-      <el-header></el-header>
+      <el-header>
+        <div class="amdin">
+          <el-dropdown @command="LoginOut">
+            <span class="el-dropdown-link">
+              admin<i class="el-icon-arrow-down el-icon--right"></i>
+            </span>
+            <el-dropdown-menu slot="dropdown">
+              <el-dropdown-item  @click="LoginOut">注销</el-dropdown-item>
+            </el-dropdown-menu>
+          </el-dropdown>
+        </div>
+      </el-header>
       <!-- 右侧main -->
       <el-main>
         <el-col><!--放置路由 显示-->
