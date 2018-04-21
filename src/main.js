@@ -24,6 +24,12 @@ Vue.use(ElementUI)
 // Vue.use(Element, { size: 'small' })
 Vue.use(VueLodash, lodash)
 
+if (process.env.NODE_ENV !== 'development') {
+  Vue.prototype.URL_PREFIX = 'http://192.168.123.251:51'
+}
+// else {
+//   Vue.prototype.URL_PREFIX = ''
+// }
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
