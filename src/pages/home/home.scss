@@ -19,7 +19,7 @@ body{
     border-bottom: 1px solid rgba(95, 75, 139, 0.2);
   }
   .el-header{
-    background-color: #fafafa;
+    background-color: #fafafa ;
   }
   .el-aside {
     // background-color: #1F2D3D;
@@ -28,7 +28,6 @@ body{
     background: -moz-linear-gradient(left, #5f4b86, #8F7ECE);
     background: webkit-linear-gradient(left,#5f4b86,#8F7ECE);
     background: -o-linear-gradient(left, #5f4b86, #8F7ECE);
-    // background: linear-gradient(#5f4b86,#8F7ECE);
     color: #333;
     text-align: left;
     line-height: 200px;
@@ -64,8 +63,12 @@ body{
       .amdin{
         width: 100px;
         height: 100%;
-        background-color: darkkhaki;
         float: right;
+        
+        span,.el-dropdown-menu__item{
+          color: #909399;
+          font-size: 18px;
+        }
       }
     }
     .el-main {

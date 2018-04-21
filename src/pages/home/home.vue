@@ -1,11 +1,16 @@
 <template>
   <el-container>
     <!-- 侧栏导航 -->
-    <el-aside width="200px">
+    <el-aside width="200px" background="linear-gradient(30deg,#5f4b86,#8F7ECE)" >
       <div class="nav_logo"></div>
       <el-row class="container"><!--导航-->
       <el-col :span='24'  class="nav">
-        <el-menu router=true default-active="2" class="el-menu-vertical-demo" text-color="#fff" background-color="#545c64" active-text-color="#ffd04b">
+        <el-menu 
+          router=true
+          default-active="/apply/running"
+          class="el-menu-vertical-demo" text-color="#fff"
+          background="linear-gradient(30deg,#5f4b86,#8F7ECE)"
+          active-text-color="#ffd04b">
           <el-submenu index="/apply">
             <template slot="title">
               <i class="el-icon-menu"></i>
