@@ -1,5 +1,5 @@
 <template>
-  <div id="pod">
+  <div id="pod" >
     <!-- <el-card class="box-card"> -->
     <div class="box-card">
       <!-- <div slot="header" class="clearfix">

@@ -8,8 +8,8 @@
         <el-menu 
           router=true
           default-active="/apply/running"
-          class="el-menu-vertical-demo" text-color="#fff"
-          background="linear-gradient(30deg,#5f4b86,#8F7ECE)"
+          class="el-menu-vertical-demo"
+          text-color="#fafafa"
           active-text-color="#ffd04b">
           <el-submenu index="/apply">
             <template slot="title">

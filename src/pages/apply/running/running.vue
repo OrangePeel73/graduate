@@ -1,5 +1,5 @@
 <template>
-  <div id="running">
+  <div id="running"  v-loading="loading">
     <!-- <el-card class="box-card"> -->
     <div class="box-card">
       <div class="content">

@@ -17,7 +17,7 @@ export default {
     loginAdmin: (context, form) => {
       console.log(form)
       return new Promise((resolve, reject) => {
-        axios.post(this.API_HOST + '/api/user/login', form).then(function (result) {
+        axios.post('/api/user/login', form).then(function (result) {
           // 保存成功之后
           resolve(result)
           context.commit('alterUserName', form)

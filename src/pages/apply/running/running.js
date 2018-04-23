@@ -11,7 +11,8 @@ export default {
       },
       dialogVisible: false,
       createMethod: '', // 部署应用方式
-      moment
+      moment,
+      loading: false
 
     }
   },
@@ -48,12 +49,14 @@ export default {
         cancelButtonText: '取消',
         type: 'warning'
       }).then(() => {
+        this.loading = true
         this.deleteServerApps(this.deleteAppsForm).then((res) => {
           this.$message({
             showClose: true,
             message: '删除应用成功',
             type: 'success'
           })
+          this.loading = false
         }).catch((error) => {
           console.log(error)
           this.$message({
