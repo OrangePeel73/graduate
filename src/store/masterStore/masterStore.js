@@ -2,6 +2,7 @@ import axios from 'axios'
 // import _ from 'lodash'
 
 // axios.defaults.baseURL = 'http://192.168.123.251'
+axios.defaults.baseURL = process.env.API_HOST
 
 export default {
   state: {
