@@ -1,5 +1,5 @@
 import axios from 'axios'
-axios.defaults.baseURL = process.env.API_HOST
+// axios.defaults.baseURL = process.env.API_HOST
 
 export default {
   state: {

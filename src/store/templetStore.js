@@ -1,5 +1,5 @@
 import axios from 'axios'
-axios.defaults.baseURL = process.env.API_HOST
+// axios.defaults.baseURL = process.env.API_HOST
 
 // axios.defaults.baseURL = 'http://192.168.123.251'
 // axios.defaults.headers['Content-Type'] = 'application/json;charset=UTF-8'
