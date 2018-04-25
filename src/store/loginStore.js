@@ -1,4 +1,6 @@
-import axios from 'axios'
+// import axios from 'axios'
+import axios from './service'
+
 // axios.defaults.baseURL = process.env.API_HOST
 
 export default {

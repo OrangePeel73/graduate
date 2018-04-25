@@ -5,6 +5,7 @@ import { mapGetters, mapActions } from 'vuex'
 export default {
   data () {
     return {
+      loading: false,
       ruleForm2: {
         name: '',
         pwd: ''
@@ -34,6 +35,7 @@ export default {
       console.log(formName)
       this.$refs.ruleForm2.validate((valid) => {
         if (valid) {
+          this.loading = true
           this.loginAdmin(formName).then((res) => {
             console.log(res.data)
             if (res.data) {  // 如果返回true
@@ -45,6 +47,7 @@ export default {
               })
               localStorage.setItem('name', 'admin')
               this.$router.push({path: '/home'})
+              this.loading = false
               // let redirect = decodeURIComponent(this.$route.query.home || '/')
               // console.log(this.$route)
               // console.log(redirect)

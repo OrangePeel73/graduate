@@ -1,5 +1,8 @@
 <template>
-    <div class="login-page">
+    <div
+        class="login-page"
+        v-loading="loading"
+        element-loading-text="正在登录...">
         <div class="login-container">
             <div class="login-slideshow">
                 <img class="login-bg" src="../../assets/bg_1.png" alt="">
@@ -7,6 +10,38 @@
             <div class="login-main">
                 <div class="logo">
                     <img class="login-log" src="../../assets/logo.png" alt="">
+                    <!-- <div class="so center">
+                        <div class="inner">
+                            <div class="stack-box">
+                            <div class="stack">
+                                <div class="item">
+                                <div class="inner-item"></div>
+                                </div>
+                                <div class="item">
+                                <div class="inner-item"></div>
+                                </div>
+                                <div class="item">
+                                <div class="inner-item"></div>
+                                </div>
+                                <div class="item">
+                                <div class="inner-item"></div>
+                                </div>
+                                <div class="item">
+                                <div class="inner-item"></div>
+                                </div>
+                            </div>
+                            <div class="box">
+                                <div class="bottom"></div>
+                                <div class="left"></div>
+                                <div class="right"></div>
+                                <div class="top"></div>
+                            </div>
+                            </div>
+                            <div class="name">
+                            </div>
+                        </div>
+                    </div> -->
+
                 </div>
                 <div class="perspective-box">
                     <div class="box-container">
@@ -31,6 +66,11 @@
             </div>
             <footer class="login-footer">Docker Simple Platform 1.0 | Docker 简易云平台</footer>
         </div>
+
+
+        
+
+
     </div>
 </template>
 
