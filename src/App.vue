@@ -25,6 +25,22 @@ export default {
   margin: 0 auto;
   padding: 0;
 }
+a{
+  text-decoration: none;
+}
+a:link{
+  color: #fafafa;
+}
+a:visited{
+  color: #fbfbfb;
+}
+a:hover{
+
+}
+a:active{
+  
+}
+
 .el-message{
   display: block;
   width: 20px;

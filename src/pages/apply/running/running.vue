@@ -43,10 +43,33 @@
                 label="镜像名"
                 sortable>
               </el-table-column>
+
               <el-table-column
-                label="端口"
-                prop="endpoint">
+                label="端口">
+                <template slot-scope="scope">
+                  <span
+                    v-for="port in scope.row.endpoint.Ports"
+                    :key="port"
+                    style="display:inline-block;margin:4px">
+                    <el-tooltip
+                      class="item"
+                      effect="dark"
+                      placement="top">
+                      <div slot="content">
+                        <a target="_blank"
+                          :href="'http://192.168.123.251:'+port.PublishedPort">
+                          192.168.123.251:{{port.PublishedPort }}
+                        </a>
+                      </div>
+                      <el-tag type="success">
+                        {{ port.PublishedPort || '-'}}
+                      </el-tag>
+                    </el-tooltip>
+                  </span>
+                  
+                </template>
               </el-table-column>
+              
               <el-table-column
                 label="创建时间"
                 >

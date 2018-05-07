@@ -12,7 +12,7 @@
               class="btn"
               @click="dialogVisible = true">
               <i class="el-icon-plus"></i>
-              新增容器
+              部署容器
             </el-button>
             <el-button
               type="danger"
@@ -49,9 +49,26 @@
               <el-table-column
                 label="端口">
                 <template slot-scope="scope">
-                  <p v-for="ip in scope.row.ip_port" :key="ip">
-                    {{ip }}
-                  </p>
+
+                  <span 
+                    v-for="ip in scope.row.ip_port"
+                    :key="ip"
+                    style="display:inline-block;margin:4px">
+                    <el-tooltip
+                      class="item"
+                      effect="dark"
+                      placement="top">
+                      <div slot="content">
+                        <a target="_blank"
+                          :href="'http://192.168.123.251:'+ip">
+                          192.168.123.251:{{ip }}
+                        </a>
+                      </div>
+                      <el-tag type="success" v-if="ip !==null">
+                         {{ip}}
+                      </el-tag>
+                    </el-tooltip>
+                  </span>
                 </template>
               </el-table-column>
               <el-table-column
@@ -88,7 +105,7 @@
         :rules="rules">
 
         <el-form-item
-          label="镜像名称"
+          label="镜像"
           :label-width="formLabelWidth"
           prop="image">
           <el-input
@@ -104,7 +121,7 @@
           prop="command">
           <el-input
             v-model="createPodForm.command"
-             placeholder="例如/bin/sh"
+             placeholder="例如/bin/sh，只能输入目录格式"
              clearable>
           </el-input>
         </el-form-item>

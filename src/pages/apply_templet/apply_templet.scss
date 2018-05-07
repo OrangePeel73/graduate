@@ -1,19 +1,10 @@
 // 对警告框 文字居右修改
-.el-message{
-  display: block;
-  width: 20px;
-  text-align: left;
-  i{
-    float: left;
-  }
-}
 .templet_container{
   .templat_btn_box{
     width: 100%;
     height:80px;
     .templet_btn{
       float: left;
-      margin: 10px;
       margin:20px;
     }
   }

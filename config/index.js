@@ -17,16 +17,16 @@ module.exports = {
       },
       '/master': { 
         target: 'http://192.168.123.251',
-        changeOrigin: true,
-        pathRewrite: { 
-          '^/master': '' //路径重写 
-        } 
+        changeOrigin: true
+        // pathRewrite: { 
+        //   '^/master': '' //路径重写 
+        // } 
       }
     },
 
     // Various Dev Server settings
     host: 'localhost', // can be overwritten by process.env.HOST
-    port: 8080, // can be overwritten by process.env.PORT, if port is in use, a free one will be determined
+    port: 8081, // can be overwritten by process.env.PORT, if port is in use, a free one will be determined
     autoOpenBrowser: false,
     errorOverlay: true,
     notifyOnErrors: true,

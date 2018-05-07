@@ -34,12 +34,12 @@ export default {
           }
         ],
         exports: [
-          {required: true, message: '映射端口不能为空', trigger: 'blur'},
-          {
-            pattern: /^\d{4}:(\d{1,})+/,
-            message: '请输入正确的映射端口',
-            trigger: 'blur'
-          }
+          {required: true, message: '映射端口不能为空', trigger: 'blur'}
+          // {
+          //   pattern: /^\d{4}:(\d{1,})+/,
+          //   message: '请输入正确的映射端口',
+          //   trigger: 'blur'
+          // }
         ]
       }
     }
@@ -104,6 +104,8 @@ export default {
               type: 'error',
               message: `添加容器失败`
             })
+            this.dialogVisible = false
+            this.loading = false
           })
         } else {
           console.log('error submit!!')

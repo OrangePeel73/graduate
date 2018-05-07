@@ -1,13 +1,13 @@
 import axios from 'axios'
 
-let baseUrl = ''
+// let baseUrl = ''
 
-if (process.env.NODE_ENV === 'development') {
-  baseUrl = 'http://192.168.123.251:51'
-} else if (process.env.NODE_ENV === 'production') {
-  baseUrl = 'http://192.168.123.251:51'
-}
-axios.defaults.baseURL = baseUrl
+// if (process.env.NODE_ENV === 'development') {
+//   baseUrl = 'http://192.168.123.251:51'
+// } else if (process.env.NODE_ENV === 'production') {
+//   baseUrl = 'http://192.168.123.251:51'
+// }
+// axios.defaults.baseURL = baseUrl
 axios.defaults.headers['Content-Type'] = 'application/json;charset=UTF-8'
 
 // 添加拦截器，解决ie下url带中文参数乱码的问题

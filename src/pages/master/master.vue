@@ -23,17 +23,25 @@
                 prop="_address"
                 label="IP">
               </el-table-column>
-              <!-- <el-table-column
-                prop="_active"
-                label="状态">
-              </el-table-column> -->
+      
               <el-table-column
-                prop="_state"
                 label="状态">
+                <template slot-scope="scope">
+                  <el-tag type="success">
+                    {{scope.row._state}}
+                  </el-tag>
+                </template>
               </el-table-column>
               <el-table-column
-                prop="_role"
                 label="角色">
+                <template slot-scope="scope">
+                  <el-tag type="info" v-if="scope.row._role === 'manager'">
+                    控制节点
+                  </el-tag>
+                  <el-tag type="info" v-else>
+                    普通节点
+                  </el-tag>
+                </template>
               </el-table-column>
               <el-table-column label="操作">
                 <template slot-scope="scope">

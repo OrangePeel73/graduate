@@ -1,6 +1,11 @@
 
 .login-page {
   box-sizing: border-box;
+  // background: url('../../assets/bg_1.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center center;
     .login-container {
         height: 100%;
         position: relative;

@@ -1,47 +1,19 @@
 <template>
     <div
         class="login-page"
+        :style="{'background-image': `url('${bgImage}')`}"
         v-loading="loading"
         element-loading-text="正在登录...">
-        <div class="login-container">
+        <div class="login-container" >
             <div class="login-slideshow">
-                <img class="login-bg" src="../../assets/bg_1.png" alt="">
+                <!-- <img class="login-bg" src="../../assets/bg_1.jpg" alt=""> -->
             </div>
             <div class="login-main">
                 <div class="logo">
-                    <img class="login-log" src="../../assets/logo.png" alt="">
-                    <!-- <div class="so center">
-                        <div class="inner">
-                            <div class="stack-box">
-                            <div class="stack">
-                                <div class="item">
-                                <div class="inner-item"></div>
-                                </div>
-                                <div class="item">
-                                <div class="inner-item"></div>
-                                </div>
-                                <div class="item">
-                                <div class="inner-item"></div>
-                                </div>
-                                <div class="item">
-                                <div class="inner-item"></div>
-                                </div>
-                                <div class="item">
-                                <div class="inner-item"></div>
-                                </div>
-                            </div>
-                            <div class="box">
-                                <div class="bottom"></div>
-                                <div class="left"></div>
-                                <div class="right"></div>
-                                <div class="top"></div>
-                            </div>
-                            </div>
-                            <div class="name">
-                            </div>
-                        </div>
-                    </div> -->
-
+                    <img
+                        class="login-log"
+                        :src="logoImage"
+                        alt="">
                 </div>
                 <div class="perspective-box">
                     <div class="box-container">

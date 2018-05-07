@@ -1,10 +1,14 @@
 import $ from 'jquery'
 import { mapGetters, mapActions } from 'vuex'
 // import { error } from 'util'
+import bgImage from '@/assets/bg_1.jpg'
+import logoImage from '@/assets/logo.png'
 
 export default {
   data () {
     return {
+      bgImage,
+      logoImage,
       loading: false,
       ruleForm2: {
         name: '',
@@ -57,6 +61,7 @@ export default {
                 type: 'error',
                 message: `登录失败,请重新登录！`
               })
+              this.loading = false
             }
           }).catch((error) => {
             console.log(error)
@@ -70,6 +75,7 @@ export default {
     resetForm (formName) {
       this.$refs.ruleForm2.resetFields()
     }
+
   },
   mounted: window.onresize = function () {
     $('.login-page').height($(window).height())
