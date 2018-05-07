@@ -52,7 +52,6 @@ export default {
     },
     // 3 删除模板
     deleteTemp (data) {
-      // alert()
       console.log(data)
       this.$confirm('此操作将永久删除该文件, 是否继续?', '提示', {
         confirmButtonText: '确定',
@@ -85,19 +84,30 @@ export default {
     addTemp (data) {
       // alert()
       console.log(data)
-      this.addTemplate(data).then((res) => {
-        this.$message({
-          message: '添加成功',
-          type: 'success'
-        })
-        // 添加成功后 弹框消失
-        this.dialogVisible = false
-      }).catch((error) => {
-        console.log(error)
-        this.$message({
-          message: '添加失败',
-          type: 'error'
-        })
+      this.$refs.addTemplate.validate((valid) => {
+        if (valid) {
+          this.addTemplate(data).then((res) => {
+            this.$message({
+              message: '添加成功',
+              type: 'success'
+            })
+            // 添加成功后 弹框消失
+            this.dialogVisible = false
+          }).catch((error) => {
+            console.log(error)
+            this.$message({
+              message: '添加失败',
+              type: 'error'
+            })
+          })
+        } else {
+          console.log('error submit!!')
+          this.$message({
+            showClose: true,
+            type: 'warning',
+            message: '请填入完整的信息！'
+          })
+        }
       })
     },
     // 调到详情页面路由

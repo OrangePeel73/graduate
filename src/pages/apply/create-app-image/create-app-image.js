@@ -74,6 +74,7 @@ export default {
           message: '创建应用失败',
           type: 'error'
         })
+        this.loading = false
       })
     }
   }

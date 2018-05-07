@@ -37,14 +37,14 @@
             <span slot="title">容器</span>
           </el-menu-item>
 
-          <el-menu-item index="/master">
-            <i class="el-icon-star-on"></i>
-            <span slot="title">主机</span>
-          </el-menu-item>
-
           <el-menu-item index="/internet">
             <i class="el-icon-sort"></i>
             <span slot="title">网络</span>
+          </el-menu-item>
+
+          <el-menu-item index="/master">
+            <i class="el-icon-star-on"></i>
+            <span slot="title">主机</span>
           </el-menu-item>
 
           <el-menu-item index="/user_center">

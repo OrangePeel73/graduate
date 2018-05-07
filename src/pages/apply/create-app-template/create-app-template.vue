@@ -8,9 +8,9 @@
      </el-steps>
     </div>
     <hr/>
-    <createAppTempStep1  :stepShow.sync="stepShow"></createAppTempStep1>    
-    <createAppTempStep2 v-show="stepShow"></createAppTempStep2>
-    <createAppTempStep3 v-show="stepShow"></createAppTempStep3>
+    <CreateAppTempStep1  :stepShow.sync="stepShow"></CreateAppTempStep1>    
+    <CreateAppTempStep2 v-show="stepShow"></CreateAppTempStep2>
+    <CreateAppTempStep3 v-show="stepShow"></CreateAppTempStep3>
     
     
     <div class="view">

@@ -44,34 +44,43 @@ export default {
     // 删除应用
     deleteApps () {
       console.log(this.deleteAppsForm)
-      this.$confirm('是否删除容器?', '提示', {
-        confirmButtonText: '确定',
-        cancelButtonText: '取消',
-        type: 'warning'
-      }).then(() => {
-        this.loading = true
-        this.deleteServerApps(this.deleteAppsForm).then((res) => {
-          this.$message({
-            showClose: true,
-            message: '删除应用成功',
-            type: 'success'
+      console.log(this.deleteAppsForm.apps)
+      if (this.deleteAppsForm) {
+        this.$confirm('是否删除容器?', '提示', {
+          confirmButtonText: '确定',
+          cancelButtonText: '取消',
+          type: 'warning'
+        }).then(() => {
+          this.loading = true
+          this.deleteServerApps(this.deleteAppsForm).then((res) => {
+            this.$message({
+              showClose: true,
+              message: '删除应用成功',
+              type: 'success'
+            })
+            this.loading = false
+          }).catch((error) => {
+            console.log(error)
+            this.$message({
+              showClose: true,
+              message: '删除应用失败',
+              type: 'error'
+            })
           })
-          this.loading = false
-        }).catch((error) => {
-          console.log(error)
+        }).catch(() => {
           this.$message({
             showClose: true,
-            message: '删除应用失败',
-            type: 'error'
+            type: 'info',
+            message: '已取消删除'
           })
         })
-      }).catch(() => {
+      } else {
         this.$message({
           showClose: true,
-          type: 'info',
-          message: '已取消删除'
+          type: 'warning',
+          message: '请选择要删除的应用！'
         })
-      })
+      }
     }
   }
 }

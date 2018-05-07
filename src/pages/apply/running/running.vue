@@ -87,8 +87,7 @@
     <el-dialog
       title="部署应用"
       :visible.sync="dialogVisible"
-      width="30%"
-      :before-close="handleClose">
+      width="30%">
       <span>请选择下面一种方式</span>
       <div class="create-method">
         <el-radio v-model="createMethod" label="createAppImage" border>通过镜像部署</el-radio>

@@ -38,11 +38,6 @@
             </div>
             <footer class="login-footer">Docker Simple Platform 1.0 | Docker 简易云平台</footer>
         </div>
-
-
-        
-
-
     </div>
 </template>
 
