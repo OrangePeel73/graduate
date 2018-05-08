@@ -40,15 +40,17 @@ body{
         ul{
           // 去除elementui自带的width问题
           width:100%;
-          background-color: #5f4b86;
-          background: linear-gradient(#5f4b86,#8F7ECE) !important;
+          // background-color: #5f4b86 !important;
+          background: linear-gradient(left,#5f4b86,#8F7ECE) !important;
+          background: -moz-linear-gradient(left, #5f4b86, #8F7ECE);
+          background: webkit-linear-gradient(left,#5f4b86,#8F7ECE);
+          background: -o-linear-gradient(left, #5f4b86, #8F7ECE);
           li{
-            
             // background-color: #5f4b86 !important;
-            background: linear-gradient(left,#5f4b86,#8F7ECE);
-            background: -moz-linear-gradient(left, #5f4b86, #8F7ECE);
-            background: webkit-linear-gradient(left,#5f4b86,#8F7ECE);
-            background: -o-linear-gradient(left, #5f4b86, #8F7ECE);
+            background: linear-gradient(left,#5f4b86,#8F7ECE) !important;
+          background: -moz-linear-gradient(left, #5f4b86, #8F7ECE);
+          background: webkit-linear-gradient(left,#5f4b86,#8F7ECE);
+          background: -o-linear-gradient(left, #5f4b86, #8F7ECE);
            .el-submenu__title{
             color: #333;
            }
@@ -81,6 +83,7 @@ body{
       background-color: #F8F8FF;
       color: #333;
       text-align: center;
+      overflow: hidden;
     }
   }
   .el-footer{

@@ -65,6 +65,12 @@ export default {
             }
           }).catch((error) => {
             console.log(error)
+            this.$message({
+              showClose: true,
+              type: 'error',
+              message: `登录失败,请重新登录！`
+            })
+            this.loading = false
           })
         } else {
           console.log('error submit!!')
