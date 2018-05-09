@@ -1,7 +1,7 @@
 <template>
   <el-container>
     <!-- 侧栏导航 -->
-    <el-aside width="200px" background="linear-gradient(30deg,#5f4b86,#8F7ECE)" >
+    <el-aside width="200px" >
       <div class="nav_logo"></div>
       <el-row class="container"><!--导航-->
       <el-col :span='24'  class="nav">

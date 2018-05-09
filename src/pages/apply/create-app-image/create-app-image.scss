@@ -45,6 +45,21 @@
               }
             }
           }
+          //  高级展开动画
+          .highBox-enter-active, .highBox-leave-active {
+            transition: all .3s ease;
+          }
+          .highBox-enter, .highBox-leave-to {
+            transform: translateY(-10px);
+            opacity: 0;
+          }
+          .boxBtn-enter-active, .boxBtn-leave-active {
+            transition: all .3s ease;
+          }
+          .boxBtn-enter, .boxBtn-leave-to {
+            transform: translateY(-10px);
+          }
+          
         }
       }
     }

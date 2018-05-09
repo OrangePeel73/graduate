@@ -39,7 +39,16 @@ export default {
         label: 'replicated',
         value: '副本'
       }],
-      loading: false // loading
+      loading: false, // loading
+      isShow: false, // 高级展开
+      rules: {
+        image: [{required: true, message: '镜像不能为空', trigger: 'blur'}],
+        ports: [{required: true, message: '端口不能为空', trigger: 'blur'}],
+        restart: [{required: true, message: '重启策略不能为空', trigger: 'blur'}],
+        mode: [{required: true, message: '模式不能为空', trigger: 'blur'}],
+        service_name: [{required: true, message: '名称不能为空', trigger: 'blur'}]
+      }
+
     }
   },
   created: function () {
@@ -52,30 +61,48 @@ export default {
     ...mapActions(['getRepos', 'createServerAppImage']),
     // 重置表单
     resetForm (formName) {
-      this.$refs.formName.resetFields()
+      console.log(this.createAppImageForm)
+      this.$refs.createAppImageForm.resetFields()
       // this.$refs.formName.resetFields()
     },
     // 通过镜像创建应用
     createAppImage (formName) {
       console.log(formName)
-      this.loading = true
-      this.createServerAppImage(formName).then((res) => {
-        this.$message({
-          showClose: true,
-          message: '创建应用成功',
-          type: 'success'
-        })
-        this.$router.push({path: '/apply/running'})
-        this.loading = false
-      }).catch((error) => {
-        console.log(error)
-        this.$message({
-          showClose: true,
-          message: '创建应用失败',
-          type: 'error'
-        })
-        this.loading = false
+      this.$refs.createAppImageForm.validate((valid) => {
+        if (valid) {
+          this.loading = true
+          this.createServerAppImage(formName).then((res) => {
+            this.$message({
+              showClose: true,
+              message: '创建应用成功',
+              type: 'success'
+            })
+            this.$router.push({path: '/apply/running'})
+            this.loading = false
+          }).catch((error) => {
+            console.log(error)
+            this.$message({
+              showClose: true,
+              message: '创建应用失败',
+              type: 'error'
+            })
+            this.loading = false
+          })
+        } else {
+          console.log('error submit')
+          this.$message({
+            showClose: true,
+            type: 'warning',
+            message: '请填入完整的信息！'
+          })
+        }
       })
+    },
+
+    //  展开高级
+    showToggle () {
+      // alert()
+      this.isShow = !this.isShow
     }
   }
 }
