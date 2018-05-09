@@ -24,12 +24,15 @@
               <el-card
                 class="templet_box"
                 :body-style="{ padding: '0px' }"
-                href="javascript:void(0)">
+                href="javascript:void(0)"
+                shadow="hover">
                 <img
                   class="image"
                   src="../../assets/templet.png"
                   @click="gotoDetail(item)"/>
-                <span :model="templateName">{{item}}</span>
+                <span :model="templateName">
+                  <el-tag>{{item}}</el-tag>
+                </span>
                     
                 <div class="bottom clearfix">
                   <el-button

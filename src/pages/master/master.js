@@ -11,6 +11,7 @@ export default {
         node_ip: '',
         node_port: ''
       },
+      loading: false,
       rules: {
         node_ip: [
           { required: true, message: 'IP不能为空', trigger: 'blur' },
@@ -38,14 +39,16 @@ export default {
     insertPort () {
       this.$refs.addMasterForm.validate((valid) => {
         if (valid) {
+          this.dialogVisible = false
+          this.loading = true
           this.insertMaster(this.form).then((res) => {
             this.$message({
               showClose: true,
               type: 'success',
               message: `添加节点成功`
             })
-            this.dialogVisible = false
             this.$refs.addMasterForm.resetFields()
+            this.loading = false
           }).catch((error) => {
             console.log(error)
             this.$message({
@@ -53,6 +56,7 @@ export default {
               type: 'error',
               message: `添加节点失败`
             })
+            this.loading = false
           })
         } else {
           console.log('error submit!!')
@@ -68,7 +72,7 @@ export default {
     //  3 删除主机
     deleteMaster (index, row) {
       console.log(row)
-      console.log(row._address)
+      console.log(row._address, row._role)
       this.$confirm('此操作将永久删除该节点, 是否继续?', '提示', {
         confirmButtonText: '确定',
         cancelButtonText: '取消',

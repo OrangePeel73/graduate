@@ -45,8 +45,8 @@ export default {
     deleteApps () {
       console.log(this.deleteAppsForm)
       console.log(this.deleteAppsForm.apps)
-      if (this.deleteAppsForm) {
-        this.$confirm('是否删除容器?', '提示', {
+      if (this.deleteAppsForm.apps.length) {
+        this.$confirm('是否删除应用?', '提示', {
           confirmButtonText: '确定',
           cancelButtonText: '取消',
           type: 'warning'

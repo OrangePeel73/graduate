@@ -154,7 +154,7 @@ export default {
       } else {
         this.$message({
           showClose: true,
-          type: 'error',
+          type: 'warning',
           message: '请选择要删除的容器！'
         })
       }

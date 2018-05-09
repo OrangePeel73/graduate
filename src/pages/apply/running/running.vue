@@ -21,7 +21,7 @@
           </div>
         <div class="tabel-box">
           <el-card class="box-card">
-            <div style="display:none">{{deletePodsForm}}{{deletePodsForm2}}</div>
+            <!-- <div style="display:none">{{deletePodsForm}}{{deletePodsForm2}}</div> -->
             <el-table
               :data="applys"
               style="width: 100%"
@@ -48,8 +48,8 @@
                 label="端口">
                 <template slot-scope="scope">
                   <span
-                    v-for="port in scope.row.endpoint.Ports"
-                    :key="port"
+                    v-for="(port, index) in scope.row.endpoint.Ports"
+                    :key=" index"
                     style="display:inline-block;margin:4px">
                     <el-tooltip
                       class="item"
@@ -73,7 +73,6 @@
               <el-table-column
                 label="创建时间">
                 <template slot-scope="scope"  >
-                  <!-- <span>{{scope.row.create_date | moment }}</span> -->
                   <span>{{ moment(scope.row.create_date ).format('YYYY-MM-DD:HH:MM:SS')}}</span>
                 </template>
               </el-table-column>

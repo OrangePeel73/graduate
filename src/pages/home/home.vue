@@ -5,8 +5,9 @@
       <div class="nav_logo"></div>
       <el-row class="container"><!--导航-->
       <el-col :span='24'  class="nav">
+        <!-- default-active="/apply/running" -->
         <el-menu 
-          router=true
+          router="true"
           default-active="/apply/running"
           class="el-menu-vertical-demo"
           text-color="#fafafa"
@@ -75,9 +76,7 @@
       <!-- 右侧main -->
       <el-main>
         <el-col><!--放置路由 显示-->
-        <!-- <el-card class="box-card"> -->
           <router-view/>
-          <!-- </el-card> -->
         </el-col>
       </el-main>
 

@@ -4,7 +4,10 @@ export default {
   name: 'repo',
   data () {
     return {
-      msg: '镜像仓库'
+      msg: '镜像仓库',
+      fileList: {
+        name: ''
+      }
     }
   },
   created: function () {
@@ -14,12 +17,16 @@ export default {
     ...mapGetters(['repos'])
   },
   methods: {
-    ...mapActions(['getRepos', 'deleteServerRepo']),
+    ...mapActions(['getRepos', 'deleteServerRepo', 'uploadPackage']),
+    handleChange () {
+
+    },
+    // 删除镜像
     deleteRepo (imageName) {
       var obj = { }
       obj.imagename = imageName
       console.log(obj)
-      this.$confirm('是否删除容器?', '提示', {
+      this.$confirm('是否删除镜像?', '提示', {
         confirmButtonText: '确定',
         cancelButtonText: '取消',
         type: 'warning'

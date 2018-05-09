@@ -36,6 +36,19 @@ export default {
           reject(error)
         })
       })
+    },
+    // 4 上传程序包
+    uploadPackage: (context, data) => {
+      console.log(data)
+      return new Promise((resolve, reject) => {
+        axios.post('/api/upload/put', data).then(function (result) {
+          // 保存成功之后
+          context.dispatch('getRepos')
+          resolve(result)
+        }).catch((error) => {
+          reject(error)
+        })
+      })
     }
 
   }

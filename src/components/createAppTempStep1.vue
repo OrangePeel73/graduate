@@ -1,31 +1,32 @@
 <template>
-  <div v-show="stepShow">step1
-    <el-button style="margin-top: 12px;" @click="next">下一步</el-button>
+  <div v-show="stepShow1">
+    {{ templates}}
   </div>
   
 </template>
 <script>
+import { mapGetters, mapActions } from 'vuex'
 export default {
   props: {
-    stepShow: { type: Boolean },
-    next: {type: Function, default: () => []}
+    stepShow1: { type: Boolean }
   },
 
   data () {
     return {
-      stepShow: true
     }
   },
   computed: {
+    ...mapGetters(['templates'])
   },
   created () {
-    this.$set(this.stepShow, true)
+    this.getTemplates() // 1获取所有模板
   },
   methods: {
-    next () {
-      // alert()
-      this.$emit('update:stepShow', false)
-    }
+    ...mapActions(['getTemplates'])
+    // next () {
+    //   this.$emit('update:stepShow1', false)
+    //   this.$emit('update:stepShow2', true)
+    // }
   }
 }
 </script>

@@ -118,7 +118,7 @@
           </div>
         </el-form-item>
         <!-- </transitio/n> -->
-        
+
           <el-form-item>
             <el-button type="primary" @click="createAppImage(createAppImageForm)">立即创建</el-button>
             <el-button @click="resetForm(createAppImageForm)">重置</el-button>

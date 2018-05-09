@@ -1,5 +1,8 @@
 <template>
-  <div class="master">
+  <div
+    class="master"
+    v-loading="loading"
+    element-loading-text="正在接入...">
     <!-- {{msg}} -->
     <!-- <el-card class="box-card"> -->
       <div class="box-card">
@@ -46,9 +49,19 @@
               <el-table-column label="操作">
                 <template slot-scope="scope">
                   <el-button
+                    v-if="scope.row._role !=='manager'"
                     size="mini"
                     type="danger"
-                    @click="deleteMaster(scope.$index, scope.row)">删除</el-button>
+                    @click="deleteMaster(scope.$index, scope.row)"
+                    >删除
+                  </el-button>
+                  <el-button
+                    v-else
+                    disabled
+                    size="mini"
+                    type="danger"
+                    @click="deleteMaster(scope.$index, scope.row)"
+                    >删除</el-button>
                 </template>
               </el-table-column>
             </el-table>

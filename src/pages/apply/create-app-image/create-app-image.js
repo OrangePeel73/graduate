@@ -42,10 +42,10 @@ export default {
       loading: false, // loading
       isShow: false, // 高级展开
       rules: {
-        image: [{required: true, message: '镜像不能为空', trigger: 'blur'}],
+        image: [{required: true, message: '镜像不能为空', trigger: 'change'}],
         ports: [{required: true, message: '端口不能为空', trigger: 'blur'}],
-        restart: [{required: true, message: '重启策略不能为空', trigger: 'blur'}],
-        mode: [{required: true, message: '模式不能为空', trigger: 'blur'}],
+        restart: [{required: true, message: '重启策略不能为空', trigger: 'change'}],
+        mode: [{required: true, message: '模式不能为空', trigger: 'change'}],
         service_name: [{required: true, message: '名称不能为空', trigger: 'blur'}]
       }
 
