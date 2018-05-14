@@ -58,6 +58,14 @@ export default {
     },
     ...mapGetters(['pods'])
   },
+
+  watch: {
+    search: {
+      handler: 'getPods',
+      immediate: true // 表示创建组件时立马执行一次
+    }
+  },
+
   methods: {
     Loading () {
       this.loading = true

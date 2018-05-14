@@ -45,6 +45,7 @@ export default new Router({
       meta: {
         requireAuth: true // 1.2 表示进入该路由需要登录
       },
+      redirect: '/apply/running', // 重定向至运行中的应用
       children: [
         {
           path: '/apply',

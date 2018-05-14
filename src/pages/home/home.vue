@@ -5,10 +5,11 @@
       <div class="nav_logo"></div>
       <el-row class="container"><!--导航-->
       <el-col :span='24'  class="nav">
-        <!-- default-active="/apply/running" -->
+        <!-- :default-active="$route.path" router="true"
+         进入子路由 或者跳转路由时保持导航激活状态 -->
         <el-menu 
           router="true"
-          default-active="/apply/running"
+          :default-active="$route.path"
           class="el-menu-vertical-demo"
           text-color="#fafafa"
           active-text-color="#ffd04b">

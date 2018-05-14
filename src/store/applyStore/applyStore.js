@@ -1,7 +1,7 @@
 import axios from 'axios'
 // import _ from 'lodash'
 // axios.defaults.baseURL = process.env.API_HOST
-
+axios.defaults.headers['Content-Type'] = 'application/json;charset=UTF-8'
 export default {
   state: {
     applys: [] // 1 应用

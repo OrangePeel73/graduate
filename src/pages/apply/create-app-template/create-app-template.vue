@@ -22,27 +22,24 @@
     <div  class="text item">
       <el-row>
         <el-radio-group v-model="seleteTemp.name" :span="6">
-        <el-col >
-          <el-radio :label="item" v-for="item in templates" :key="item">
-          <el-card :body-style="{ padding: '0px' }" shadow="hover">
-            <img src="https://dn-daoweb-resource.qbox.me/image-icon%2Fminecraft_icon_creeper-1.png" class="image">
-            <div style="padding: 14px;">
-              <span><el-tag>{{item}}</el-tag></span>
-              <div class="bottom clearfix">
-               
-              </div>
-            </div>
-          </el-card>
-           </el-radio>
-        </el-col>
-       
+          <el-col >
+            <el-radio :label="item" v-for="item in templates" :key="item">
+              <el-card :body-style="{ padding: '0px' }" shadow="hover">
+                <img src="@/assets/templet_1.png" class="image">
+                <div style="padding: 14px;">
+                  <span><el-tag>{{ item }}</el-tag></span>
+                  <div class="bottom clearfix">
+                  </div>
+                </div>
+              </el-card>
+            </el-radio>
+          </el-col>
         </el-radio-group>
       </el-row>
-      <!-- {{seleteTemp}} -->
+
       <el-row>
         <el-button @click="createAppByTemp(seleteTemp)">立即部署</el-button>
       </el-row>
-     
     </div>
   </el-card>
 
@@ -51,12 +48,47 @@
 
 <style lang="scss" scoped>
 #createAppTemp{
-  .el-card__body{
-    img{
-      width: 240px;
-      display: inline-block;
+  .box-card{
+    .el-card__body{
+      .item{
+        .el-row{
+          .el-radio-group{
+           .el-col{
+             .el-radio{
+               position: relative;
+              //  单选框的选中圆点
+                .el-radio__input{
+                  // position: absolute;
+                  top: 22px;
+                  left: -82px;
+                }
+                .el-radio__label{
+                  .el-card{
+                    width: 200px;
+                    .el-card__body{
+                       img{
+                        width: 160px;
+                        height: 160px;
+                        display: block;
+                        margin-top: 18px;
+                      }
+                    }
+                   
+                  }   
+                }
+             }
+           } 
+          }
+        }
+      }
     }
   }
+  // .el-card__body{
+  //   img{
+  //     width: 240px;
+  //     display: inline-block;
+  //   }
+  // }
 }
 </style>
 

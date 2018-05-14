@@ -19,6 +19,13 @@ export default {
     this.getTemplates() // 1获取所有模板
   },
 
+  watch: {
+    search: {
+      handler: 'getTemplates',
+      immediate: true // 表示创建组件时立马执行一次
+    }
+  },
+
   methods: {
     ...mapActions(['getTemplates', 'createServerAppTemp']),
     createAppByTemp (form) {
@@ -32,7 +39,8 @@ export default {
             type: 'success'
           })
           this.loading = false
-          this.$router.push({path: '/apply/running'})
+          this.$router.push({path: '/pod'})
+          this.$router.go(0) // 跳转路由后刷新页面
         }).catch((error) => {
           console.log(error)
           this.$message({
@@ -49,7 +57,6 @@ export default {
           type: 'warning'
         })
       }
-      
     }
 
     // // step 上一步
