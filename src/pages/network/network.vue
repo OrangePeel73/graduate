@@ -9,16 +9,17 @@
 
           <el-table-column
             prop="name"
-            label="名称">
+            label="名称"
+            min-width="180">
           </el-table-column>
 
           <el-table-column label="可用范围">
             <template slot-scope="scope">
               <el-tag type="info" v-if="scope.row.scope === 'swarm'">
-                可跨主机
+                集群
               </el-tag>
               <el-tag type="info" v-if="scope.row.scope === 'local'">
-                只限本机
+                本地
               </el-tag>
             </template>
           </el-table-column>

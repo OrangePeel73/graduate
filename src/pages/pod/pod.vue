@@ -32,24 +32,37 @@
               ref="multipleTable"
               @selection-change="handleSelectionChange"
               v-loading="loading">
+
               <el-table-column
                 type="selection"
                 width="55">
               </el-table-column>
+
               <el-table-column
-                label="容器">
+                label="容器"
+                min-width="100">
                 <template slot-scope="scope">
-                  <span>{{scope.row.name[0].slice(1) }}</span>
+                    <el-tooltip
+                      class="item"
+                      effect="dark"
+                      placement="top"
+                      v-if="off">
+                      <div slot="content">
+                          {{scope.row.name[0].slice(1) }}
+                      </div>
+                      <span>{{scope.row.name[0].slice(1) }}</span>
+                    </el-tooltip>
                 </template>
               </el-table-column>
+
               <el-table-column
                 prop="image"
                 label="镜像">
               </el-table-column>
+
               <el-table-column
                 label="端口">
                 <template slot-scope="scope">
-
                   <span 
                     v-for="(ip, index) in scope.row.ip_port"
                     :key="index"
@@ -71,6 +84,7 @@
                   </span>
                 </template>
               </el-table-column>
+
               <el-table-column
                 prop="state"
                 label="当前状态">
@@ -80,6 +94,7 @@
                   <el-progress v-if="scope.row.state !== 'running'" :stroke-width="12" :percentage="0" status="exception" :show-text='false'></el-progress>
                 </template>
               </el-table-column>
+
               <el-table-column
                 label="启动时间">
                 <template slot-scope="scope">
@@ -87,6 +102,7 @@
                   <span v-if="scope.row.status.indexOf('hours') == -1">{{'更新于' + scope.row.status.slice(3, 5) + '分钟前'}}</span>
                 </template>
               </el-table-column>
+
             </el-table>
           </el-card>
         </div>

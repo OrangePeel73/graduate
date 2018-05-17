@@ -27,6 +27,15 @@
             text-align: center;
             background-color:#F1F3F6; 
           }
+          tr.el-table__row{
+            td{
+              .cell{
+                overflow:hidden;
+                text-overflow:ellipsis;
+                white-space:nowrap
+              }
+            }
+          }
         }
       }
     } 

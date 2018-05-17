@@ -80,6 +80,10 @@ body{
   }
   .el-container{
     .el-header{
+      .bigdata{
+        float: left;
+        // margin-top: 10px;
+      }
       .amdin{
         width: 100px;
         height: 100%;

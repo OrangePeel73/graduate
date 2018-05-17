@@ -1,5 +1,5 @@
 <template>
-  <el-container>
+  <el-container >
     <!-- 侧栏导航 -->
     <el-aside width="200px" >
       <div class="nav_logo"></div>
@@ -25,7 +25,7 @@
                 <i class="el-icon-document"></i>
                 <el-badge :value="applys.length" class="item">正在运行</el-badge>
               </el-menu-item>
-              <el-menu-item index="/apply/stoped"><i class="el-icon-document"></i>已停止</el-menu-item>
+              <!-- <el-menu-item index="/apply/stoped"><i class="el-icon-document"></i>已停止</el-menu-item> -->
             </el-menu-item-group>
           </el-submenu>
 
@@ -76,8 +76,26 @@
     </el-aside>
     
     <!--右侧  -->
-    <el-container>
+    <el-container
+      v-loading="loading"
+      element-loading-text="初始化中...">
       <el-header>
+
+        <div class="bigdata">
+          <!-- <el-dropdown split-button class="downBtn">
+            大数据处理
+            <el-dropdown-menu slot="dropdown"> -->
+              <!-- el-dropdown-item没有自定义click事件, 两个解决办法:
+               使用原生click事件: @click.native = "createHadoop"
+               使用菜单项的指令事件:el-dropdown @command="handleCommand" 
+                <el-dropdown-item command="logout">退出登录</el-dropdown-item>-->
+
+              <!-- <el-dropdown-item @click.native ="HadoopDialogVisible = true">Hadoop</el-dropdown-item>
+              <el-dropdown-item>上传程序包</el-dropdown-item>
+            </el-dropdown-menu>
+          </el-dropdown> -->
+        </div>
+
         <div class="amdin">
           <el-dropdown @command="LoginOut">
             <span class="el-dropdown-link">
@@ -100,10 +118,29 @@
       <el-footer>
         <p>CopyRight @Grace</p>
       </el-footer>
-
+    <!-- </di5v> -->
     </el-container>
 
-    
+<!-- hadoop dialog -->
+    <el-dialog
+      title="初始化Hadoop"
+      :visible.sync="HadoopDialogVisible"
+      width="30%"
+      center>
+      <el-form
+        :label-position="left"
+        label-width="80px"
+        :model="hadoopForm"
+        ref="hadoopForm">
+        <el-form-item label="数量">
+          <el-input v-model.number="hadoopForm.slave"></el-input>
+        </el-form-item>
+      </el-form>
+      <span slot="footer" class="dialog-footer">
+        <el-button @click="callOff">取 消</el-button>
+        <el-button type="primary" @click="createHadoop(hadoopForm)">确 定</el-button>
+      </span>
+    </el-dialog>
     
 </el-container>
 </template>

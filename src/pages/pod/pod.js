@@ -20,6 +20,7 @@ export default {
         command: '',
         exports: ''
       },
+
       // 表单验证
       rules: {
         image: [
