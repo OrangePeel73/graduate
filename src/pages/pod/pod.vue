@@ -45,8 +45,7 @@
                     <el-tooltip
                       class="item"
                       effect="dark"
-                      placement="top"
-                      v-if="off">
+                      placement="top">
                       <div slot="content">
                           {{scope.row.name[0].slice(1) }}
                       </div>
@@ -56,8 +55,18 @@
               </el-table-column>
 
               <el-table-column
-                prop="image"
                 label="镜像">
+                <template slot-scope="scope">
+                    <el-tooltip
+                      class="item"
+                      effect="dark"
+                      placement="top">
+                      <div slot="content">
+                          {{scope.row.image }}
+                      </div>
+                      <span>{{scope.row.image }}</span>
+                    </el-tooltip>
+                </template>
               </el-table-column>
 
               <el-table-column
@@ -89,10 +98,22 @@
                 prop="state"
                 label="当前状态">
                 <template slot-scope="scope">
-                  <!-- 对当前状态进行判断 为running时显示绿色的进度条 否则进度条绿色为0 -->
-                  <el-progress v-if="scope.row.state == 'running'" :stroke-width="12" :percentage="100" status="success" :show-text='false'></el-progress>
-                  <el-progress v-if="scope.row.state !== 'running'" :stroke-width="12" :percentage="0" status="exception" :show-text='false'></el-progress>
+                    <el-tooltip
+                      class="item"
+                      effect="dark"
+                      placement="top">
+                      <div slot="content">
+                          运行中
+                      </div>
+                      <el-progress v-if="scope.row.state == 'running'" :stroke-width="12" :percentage="100" status="success" :show-text='false'></el-progress>
+                      <el-progress v-if="scope.row.state !== 'running'" :stroke-width="12" :percentage="0" status="exception" :show-text='false'></el-progress>
+                    </el-tooltip>
                 </template>
+                <!-- <template slot-scope="scope"> -->
+                  <!-- 对当前状态进行判断 为running时显示绿色的进度条 否则进度条绿色为0 -->
+                  <!-- <el-progress v-if="scope.row.state == 'running'" :stroke-width="12" :percentage="100" status="success" :show-text='false'></el-progress>
+                  <el-progress v-if="scope.row.state !== 'running'" :stroke-width="12" :percentage="0" status="exception" :show-text='false'></el-progress> -->
+                <!-- </template> -->
               </el-table-column>
 
               <el-table-column

@@ -1,14 +1,14 @@
 <template>
   <div id="repo">
     <!-- 按钮 -->
-    <div class="btn-box">
+    <!-- <div class="btn-box">
       <el-button
         class="templet_btn"
         type="primary"
         icon="el-icon-plus"
         >创建镜像
       </el-button>
-    </div>
+    </div> -->
     <!-- 容器盒子 -->
     <div class="content-box">
       <div class="content">

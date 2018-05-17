@@ -5,6 +5,7 @@ export default {
   data: function () {
     return {
       title: 'home',
+      loginUser: localStorage.getItem('name'),
       // activeIndex: '/'
       loading: false,
       hadoopForm: {

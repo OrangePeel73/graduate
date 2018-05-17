@@ -99,7 +99,8 @@
         <div class="amdin">
           <el-dropdown @command="LoginOut">
             <span class="el-dropdown-link">
-              admin<i class="el-icon-arrow-down el-icon--right"></i>
+              {{loginUser}}
+              <i class="el-icon-arrow-down el-icon--right"></i>
             </span>
             <el-dropdown-menu slot="dropdown">
               <el-dropdown-item  @click="LoginOut">注销</el-dropdown-item>
@@ -127,8 +128,9 @@
       :visible.sync="HadoopDialogVisible"
       width="30%"
       center>
+      <!-- :label-position="left" -->
       <el-form
-        :label-position="left"
+        
         label-width="80px"
         :model="hadoopForm"
         ref="hadoopForm">
