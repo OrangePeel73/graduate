@@ -57,8 +57,21 @@ export default {
       return new Promise((resolve, reject) => {
         axios.post('/api/template/start', form)
         .then(function (result) {
-          // 删除成功之后
           context.dispatch('getApplys')
+          resolve(result)
+        }).catch((error) => {
+          reject(error)
+        })
+      })
+    },
+
+    //  大数据处理
+    bigDataServer: (context, form) => {
+      console.log(form)
+      return new Promise((resolve, reject) => {
+        axios.post('/api/bigdata/init', form)
+        .then(function (result) {
+          // context.dispatch('getApplys')
           resolve(result)
         }).catch((error) => {
           reject(error)

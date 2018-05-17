@@ -1,12 +1,16 @@
 #running{
   .box-card{
     .content{
+      
       .btn-box{
         min-width: 400px;
         height: 50px;
         padding: 20px;
         .el-button{
           float: left;
+        }
+        .bigData{
+          float: right;
         }
       }
       .tabel-box{

@@ -151,6 +151,7 @@ export default {
               message: '删除失败',
               type: 'error'
             })
+            this.loading = false
           })
         }).catch(() => {
           this.$message({

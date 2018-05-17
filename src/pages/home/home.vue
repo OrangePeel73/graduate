@@ -16,37 +16,52 @@
           <el-submenu index="/apply">
             <template slot="title">
               <i class="el-icon-menu"></i>
-              <span>应用</span>
+              <span>
+                <el-badge :value="applys.length" class="item">应用</el-badge>
+              </span>
             </template>
             <el-menu-item-group>
-              <el-menu-item index="/apply/running"><i class="el-icon-document"></i>正在运行</el-menu-item>
+              <el-menu-item index="/apply/running">
+                <i class="el-icon-document"></i>
+                <el-badge :value="applys.length" class="item">正在运行</el-badge>
+              </el-menu-item>
               <el-menu-item index="/apply/stoped"><i class="el-icon-document"></i>已停止</el-menu-item>
             </el-menu-item-group>
           </el-submenu>
 
           <el-menu-item index="/repo">
             <i class="el-icon-menu"></i>
-            <span slot="title">镜像仓库</span>
+            <span slot="title">
+              <el-badge :value="repos.length" class="item">镜像仓库</el-badge>
+            </span>
           </el-menu-item>
 
           <el-menu-item index="/apply_templet">
             <i class="el-icon-goods"></i>
-            <span slot="title">应用模板</span>
+            <span slot="title">
+              <el-badge :value="templates.length" class="item">应用模板</el-badge>
+            </span>
           </el-menu-item>
 
           <el-menu-item index="/pod">
-            <i class="el-icon-goods"></i>
-            <span slot="title">容器</span>
+            <i class="el-icon-goods"></i> 
+            <span slot="title">
+              <el-badge :value="pods.length" class="item">容器</el-badge>
+            </span>
           </el-menu-item>
 
           <el-menu-item index="/internet">
             <i class="el-icon-sort"></i>
-            <span slot="title">网络</span>
+            <span slot="title">
+              <el-badge :value="networks.length" class="item">网络</el-badge>
+            </span>
           </el-menu-item>
 
           <el-menu-item index="/master">
             <i class="el-icon-star-on"></i>
-            <span slot="title">主机</span>
+            <span slot="title">
+              <el-badge :value="masters.length" class="item">主机</el-badge>
+            </span>
           </el-menu-item>
 
           <el-menu-item index="/user_center">

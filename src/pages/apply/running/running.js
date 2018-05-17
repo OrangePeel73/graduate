@@ -12,7 +12,8 @@ export default {
       dialogVisible: false,
       createMethod: '', // 部署应用方式
       moment,
-      loading: false
+      loading: false,
+      showColl: true // 大数据处理的折叠面板
 
     }
   },
@@ -25,7 +26,8 @@ export default {
   methods: {
     ...mapActions([
       'getApplys',
-      'deleteServerApps'
+      'deleteServerApps',
+      'bigDataServer'
     ]),
     // 创建应用 - 选择部署方式(通过label来传递参数跳到相关路由)
     gotoMethod (createMethod) {

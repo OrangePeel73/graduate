@@ -51,9 +51,24 @@ body{
           background: -moz-linear-gradient(left, #5f4b86, #8F7ECE);
           background: webkit-linear-gradient(left,#5f4b86,#8F7ECE);
           background: -o-linear-gradient(left, #5f4b86, #8F7ECE);
+          position: relative;
            .el-submenu__title{
             color: #333;
            }
+
+          //  
+          .el-badge{
+            width: 100px;
+            .el-badge__content{
+              float: right;
+              position: absolute;
+              top: 30px;
+              right: 10px;
+              background-color: #909399;
+              color: #fafafa;
+              border: 0 solid ;
+            }
+          }
           }
         }
       }

@@ -18,6 +18,12 @@
               @click="deleteApps()"
               >
             </el-button>
+
+            <el-button
+              type="primary"
+              class="bigData">大数据处理</el-button>
+            
+
           </div>
         <div class="tabel-box">
           <el-card class="box-card">
