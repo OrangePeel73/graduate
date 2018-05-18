@@ -49,7 +49,7 @@ export default {
                 type: 'success',
                 message: `登录成功`
               })
-              localStorage.setItem('name', 'admin')
+              localStorage.setItem('name', formName.name)
               this.$router.push({path: '/home'})
               this.loading = false
               // let redirect = decodeURIComponent(this.$route.query.home || '/')

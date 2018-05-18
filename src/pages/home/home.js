@@ -57,6 +57,7 @@ export default {
     // },
     // 注销 去除localstorage的name属性
     LoginOut () {
+      window.localStorage.removeItem('name')
       localStorage.removeItem('name') // 清除localStorage
       this.$router.push({path: '/'})
       // location.reload()
